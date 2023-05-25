@@ -1,6 +1,6 @@
 import "../styles/NavBar.css"
-import Link from '../components/Link.js'
-import {Route,  Routes, useNavigate} from 'react-router-dom'
+// import Link from '../components/Link.js'
+import {useNavigate} from 'react-router-dom'
 import { Compas, BackArrow } from '../components/SVG.js'
 
 const NavBar =()=>{

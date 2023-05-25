@@ -89,6 +89,8 @@ const elemntor = ( lmt )=> {
       return "🌞";
     case 'Chaos': 
       return "🌕";
+    default:
+      return
   }
 }
 
