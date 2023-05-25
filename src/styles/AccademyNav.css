@@ -1,0 +1,22 @@
+.AccademyNav {
+  height: 100px;
+  padding: 15px;
+
+  border: 1px solid white;
+
+  position: absolute;
+  left: 0;
+  right:0;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.lien_accademy_nav{
+  display: grid;
+  place-items: center;
+  min-width: 200px;
+  padding: 5px;
+}

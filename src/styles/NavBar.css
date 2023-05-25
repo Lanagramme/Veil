@@ -1,0 +1,45 @@
+.Nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  transition-duration: .3s;
+  opaticy: 0;
+}
+.Nav.actif {
+  height: 300px!important;
+  z-index: 10;
+  background-color: #13141a;
+  -webkit-box-shadow: 2px 5px 16px 0px #00000090, 5px 5px 15px 5px rgba(0,0,0,0); 
+  box-shadow: 2px 5px 16px 0px #00000090, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.buttons {
+  width: fit-content;
+  margin: 15px;
+  display: flex;
+}
+.NavButton {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background: #2a2a2a;
+  box-shadow: -1px 6px 20px 0px rgba(0,0,0,0.48);
+}
+.retour { 
+  width: 130px;
+  padding-left: 20px ;
+  position: relative;
+}
+.navMap {
+  width: 200px;
+  display: grid;
+  place-items: center;
+  margin-left: 15px;
+}
+.NavButton:hover, .Nav.actif .navMap {
+  z-index: 10;
+  border: 1px solid #ffffff50;
+  box-shadow: -1px 6px 20px 0px rgba(255,255,255,0.18);
+}

@@ -1,0 +1,63 @@
+.Dortoire {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 95px;
+}
+
+.charDisplay::-webkit-scrollbar {
+  display: none;
+}
+.charDisplay {
+  max-width: 100%;
+  margin: 0 max((100vw - 1000px)/2,50px);
+  height: 100%;
+  overflow: auto;
+  justify-content: space-evenly;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+}
+
+.character {
+  height: 350px;
+  width: 200px;
+  margin: 0 25px 30px;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 5px 16px 0px #00000090, 5px 5px 15px 5px rgba(0,0,0,0); 
+  box-shadow: 2px 5px 16px 0px #00000090, 5px 5px 15px 5px rgba(0,0,0,0);
+  position: relative;
+}
+
+.charInfo {
+  position: absolute;
+  bottom: 0;
+  left:0;
+  right: 0;
+  text-align: center
+}
+.elements {
+  display: flex;
+  position: relative;
+  top: -5px;
+  left: 5px;
+}
+.lmt {
+  width: 30px;
+  height: 50px;
+  margin: 2px;
+  display: grid;
+  place-items: center;
+  clip-path: polygon(100% 0, 100% 100%, 52% 79%, 0 100%, 0% 0%);
+  box-shadow: 2px 5px 16px 0px #00000090, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.Air { background: aliceblue}
+.Eau { background: #07627e}
+.Feu { background: #9d3131}
+.Terre { background: #198d19}
+.Order { background: #563030}
+.Chaos { background: black}
+

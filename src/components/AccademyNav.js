@@ -1,0 +1,21 @@
+import '../styles/AccademyNav.css'
+import Link from "./Link.js"
+
+const accademy = [
+  {
+    text: "Training"
+  },
+  {
+    text: "Team Clash"
+  },
+]
+const AccademyNav = () => <div className="AccademyNav">
+  {
+    accademy.map( lien => <Link
+      text={lien.text} 
+      css='lien_accademy_nav'
+    />)
+  }
+</div>
+
+export default AccademyNav
