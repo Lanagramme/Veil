@@ -143,7 +143,7 @@ const Page = () => {
   return <div className='Dortoire' onClick={closeNav}>
   <div className="charDisplay">
     {
-      characters.map(perso => <Character perso={perso} key={perso.name}/>)
+      chars.map(perso => <Character perso={perso} key={perso.name}/>)
     }
   </div>
 
