@@ -1,11 +1,10 @@
 import { Client } from "@notionhq/client"
-
-const notion = new Client({ auth: process.env.NOTION_KEY })
-const databaseId = process.env.NOTION_DATABASE_ID
-
 import '../styles/Dortoire.css'
 import closeNav from '../actions/closeNav.js'
 import NavBar from "../components/NavBar.js"
+
+const notion = new Client({ auth: process.env.NOTION_KEY })
+const databaseId = process.env.NOTION_DATABASE_ID
 
 const characters = [
   {
@@ -113,7 +112,7 @@ const Page = () => {
 
   notion.database.query({
     database_id: databaseId
-  }).then(res => {
+  }).then(x => {
     const list = []
 
     for (let index = 0; index < x.results.length; index++) {
