@@ -1,3 +1,8 @@
+import { Client } from "@notionhq/client"
+
+const notion = new Client({ auth: process.env.NOTION_KEY })
+const databaseId = process.env.NOTION_DATABASE_ID
+
 import '../styles/Dortoire.css'
 import closeNav from '../actions/closeNav.js'
 import NavBar from "../components/NavBar.js"
@@ -104,7 +109,34 @@ const Character = ( {perso} ) => <div className="character">
   </div>
 </div>
 
-const Page = () => <div className='Dortoire' onClick={closeNav}>
+const Page = () => {
+
+  notion.database.query({
+    database_id: databaseId
+  }).then(res => {
+    const list = []
+
+    for (let index = 0; index < x.results.length; index++) {
+      let char = {
+        affiliation:[],
+        orientation:[],
+        element:[],
+        specialisation:[],
+      }
+      char.name = x.results[index].properties.Name.title[0].text.content
+      char.affiliation = []
+      x.results[index].properties.Affiliation.multi_select.map(x => char.affiliation.push(x.name))
+      x.results[index].properties.Orientation.multi_select.map(x => char.clan.push(x.name))
+      x.results[index].properties.Element.multi_select.map(x =>     char.elements.push(x.name))
+      x.results[index].properties.Specialisation.multi_select.map(x => char.specialisation.push(x.name))
+      list.push(char)
+    }
+      characters = list
+  })
+
+
+
+  return <div className='Dortoire' onClick={closeNav}>
   <div className="charDisplay">
     {
       characters.map(perso => <Character perso={perso} key={perso.name}/>)
@@ -112,6 +144,7 @@ const Page = () => <div className='Dortoire' onClick={closeNav}>
   </div>
 
 </div>
+}
 
 const Dortoire = () => <>
   <NavBar />
