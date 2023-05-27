@@ -1,12 +1,15 @@
 import { Client } from "@notionhq/client"
+import { useState } from 'react'
+
 import '../styles/Dortoire.css'
+
 import closeNav from '../actions/closeNav.js'
 import NavBar from "../components/NavBar.js"
 
 const notion = new Client({ auth: process.env.NOTION_KEY })
 const databaseId = process.env.NOTION_DATABASE_ID
 
-const characters = [
+let characters = [
   {
     name: "Syla",
     elements: ['Terre'],
@@ -107,10 +110,12 @@ const Character = ( {perso} ) => <div className="character">
     <p>{ perso.clan }</p>
   </div>
 </div>
+console.log(notion)
 
 const Page = () => {
+  const [chars, setChars] = useState(characters)
 
-  notion.database.query({
+  notion.databases.query({
     database_id: databaseId
   }).then(x => {
     const list = []
@@ -130,7 +135,7 @@ const Page = () => {
       x.results[index].properties.Specialisation.multi_select.map(x => char.specialisation.push(x.name))
       list.push(char)
     }
-      characters = list
+    setChars(list)
   })
 
 
