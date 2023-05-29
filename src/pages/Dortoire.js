@@ -106,18 +106,16 @@ const Character = ( {perso} ) => <div className="character">
   </div>
 </div>
 
+  Get.Character()
+  .then(x => setCharacters(x) )
+
 const Page = () => {
   const [characters, setCharacters] = useState([])
-  Get.Character()
-  .then(x => {
-    setCharacters(x)
-  })
 
   return <div className='Dortoire' onClick={closeNav}>
     <div className="charDisplay">
       {
         characters.map(perso => {
-          console.log(perso.Element)
           return <Character perso={perso} key={perso.name}/>
         })
       }
