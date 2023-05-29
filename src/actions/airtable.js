@@ -30,9 +30,9 @@ const setItems = (baseName) => {
     })
   }
 }
-const data = {
-  fields: { Name: 'test', Affiliation: ['rec0OKXhDfkLVAJsX']},
-}
+// const data = {
+  // fields: { Name: 'test', Affiliation: ['rec0OKXhDfkLVAJsX']},
+// }
 // Get.Affiliation()
 // .then(x => console.log(x))
 // base( "Character" ).create([ data], (err, records) => {
