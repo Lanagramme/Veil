@@ -3,8 +3,8 @@ import closeNav from '../actions/closeNav.js'
 import NavBar from "../components/NavBar.js"
 import A from '../actions/airtable.js'
 
-console.log(Object.keys(A.airtable))
 A.airtable.Get.Element()
+.then(x => console.log(x))
 
 
 const characters = [
