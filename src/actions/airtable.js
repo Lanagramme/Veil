@@ -49,6 +49,6 @@ const Set = {
   Specialisation : setItems( 'Specialisation')
 }
 
-exports.airtable = {
+export {
   Get, Set 
 }

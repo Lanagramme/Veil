@@ -1,10 +1,12 @@
 import '../styles/Dortoire.css'
 import closeNav from '../actions/closeNav.js'
 import NavBar from "../components/NavBar.js"
-import A from '../actions/airtable.js'
+import { Get, Set} from '../actions/airtable.js'
 
-A.airtable.Get.Element()
-.then(x => console.log(x))
+console.log(Get)
+console.log(Set)
+// Get.Element()
+// .then(x => console.log(x))
 
 
 const characters = [
