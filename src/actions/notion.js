@@ -1,6 +1,6 @@
 // import { Client } from "@notionhq/client"
 const Client = require('@notionhq/client').Client
-const airtable = require('./airtable.js').airtable
+// const airtable = require('./airtable.js').airtable
 
 
 const NOTION_KEY='secret_ICm2ZEkCKunXKggCjSUotvf6KkpXaoSUW65O87Tibg5'
@@ -25,13 +25,19 @@ notion.databases.query({
     }
     char.Name = x.results[index].properties.Name.title[0].text.content
     x.results[index].properties.Affiliation.multi_select.map(x => char.Affiliation.push( x.name))
+    char.Affiliation = char.Affiliation.join()
     x.results[index].properties.Orientation.multi_select.map(x => char.Orientation.push(x.name))
+    char.Orientation = char.Orientation.join()
     x.results[index].properties.Element.multi_select.map(x =>     char.Element.push(x.name))
+    char.Element = char.Element.join()
     x.results[index].properties.Specialisation.multi_select.map(x => char.Specialisation.push(x.name))
-    characters.push({fields: char, typecast:true})
+    char.Specialisation = char.Specialisation.join()
+    characters.push({fields: char})
   }
 
-  airtable.Set.Character(characters)
+    console.log(characters)
+    airtable.Set.Character(characters)
+    return
 
     // console.log(characters)
 

@@ -55,9 +55,9 @@
 }
 
 .Air { background: aliceblue}
-.Eau { background: #07627e}
-.Feu { background: #9d3131}
-.Terre { background: #198d19}
+.Eau,.Water { background: #07627e}
+.Feu,.Fire { background: #9d3131}
+.Terre,.Earth { background: #198d19}
 .Order { background: #563030}
 .Chaos { background: black}
 
