@@ -1,15 +1,13 @@
-import { Client } from "@notionhq/client"
-import { useState } from 'react'
-
 import '../styles/Dortoire.css'
-
 import closeNav from '../actions/closeNav.js'
 import NavBar from "../components/NavBar.js"
+import A from '../actions/airtable.js'
 
-const notion = new Client({ auth: process.env.NOTION_KEY })
-const databaseId = process.env.NOTION_DATABASE_ID
+console.log(Object.keys(A.airtable))
+A.airtable.Get.Element()
 
-let characters = [
+
+const characters = [
   {
     name: "Syla",
     elements: ['Terre'],
@@ -110,45 +108,15 @@ const Character = ( {perso} ) => <div className="character">
     <p>{ perso.clan }</p>
   </div>
 </div>
-console.log(notion)
 
-const Page = () => {
-  const [chars, setChars] = useState(characters)
-
-  notion.databases.query({
-    database_id: databaseId
-  }).then(x => {
-    const list = []
-
-    for (let index = 0; index < x.results.length; index++) {
-      let char = {
-        affiliation:[],
-        orientation:[],
-        element:[],
-        specialisation:[],
-      }
-      char.name = x.results[index].properties.Name.title[0].text.content
-      char.affiliation = []
-      x.results[index].properties.Affiliation.multi_select.map(x => char.affiliation.push(x.name))
-      x.results[index].properties.Orientation.multi_select.map(x => char.clan.push(x.name))
-      x.results[index].properties.Element.multi_select.map(x =>     char.elements.push(x.name))
-      x.results[index].properties.Specialisation.multi_select.map(x => char.specialisation.push(x.name))
-      list.push(char)
-    }
-    setChars(list)
-  })
-
-
-
-  return <div className='Dortoire' onClick={closeNav}>
+const Page = () => <div className='Dortoire' onClick={closeNav}>
   <div className="charDisplay">
     {
-      chars.map(perso => <Character perso={perso} key={perso.name}/>)
+      characters.map(perso => <Character perso={perso} key={perso.name}/>)
     }
   </div>
 
 </div>
-}
 
 const Dortoire = () => <>
   <NavBar />
