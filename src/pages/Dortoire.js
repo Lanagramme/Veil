@@ -109,7 +109,7 @@ const Character = ( {perso} ) => <div className="character">
 const Page = () => {
   const [characters, setCharacters] = useState([])
   Get.Character()
-  .then(x => setCharacters(x) )
+  .then(x => characters.length || setCharacters(x) )
 
   return <div className='Dortoire' onClick={closeNav}>
     <div className="charDisplay">
