@@ -10,6 +10,7 @@
   display: none;
 }
 .charDisplay {
+  padding-top: 5px;
   max-width: 100%;
   margin: 0 max((100vw - 1000px)/2,50px);
   height: 100%;

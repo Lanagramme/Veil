@@ -1,81 +1,7 @@
 import '../styles/Dortoire.css'
-import closeNav from '../actions/closeNav.js'
 import NavBar from "../components/NavBar.js"
 import { Get } from '../actions/airtable.js'
 import { useState } from 'react'
-
-// const characters = [
-//   {
-//     name: "Syla",
-    // elements: ['Terre'],
-//     clan: "Accademy"
-//   },
-//   {
-//     name: "Tamara",
-//     elements: ["Feu", "Terre"],
-//     clan: "Accademy"
-//   },
-//   {
-//     name: "Cendremiaire",
-//     elements: ["Order"],
-//     clan: "Accademy"
-//   },
-//   {
-//     name: "Alice",
-//     elements: ["Feu"],
-//     clan: "Misfits"
-//   },
-//   {
-//     name: "Alec",
-//     elements: ['Feu', 'Eau', 'Terre', 'Order', 'Chaos'],
-//     clan: "Misfits"
-//   },
-//   {
-//     name: "Eliott",
-//     elements: ['Eau'],
-//     clan: "Misfits"
-//   },
-//   {
-//     name: "Ashe",
-//     elements: ['Terre', 'Feu'],
-//     clan: "Accademy"
-//   },
-//   {
-//     name: "Paticerise",
-//     elements: ['Terre'],
-//     clan: "Croissants"
-//   },
-//   {
-//     name: "Phillipa",
-//     elements: ['Feu'],
-//     clan: "Croissants"
-//   },
-//   {
-//     name: "Malika",
-//     elements: ["Eau", 'Feu'],
-//     clan: "Songbirds"
-//   },
-//   {
-//     name: "Natasha",
-//     elements: ['Eau'],
-//     clan: "Songbirds"
-//   },
-//   {
-//     name: "Alexander",
-//     elements: ['Feu'],
-//     clan: "Ashen"
-//   },
-//   {
-//     name: "Elise",
-//     elements: ['Terre'],
-//     clan: "Corp."
-//   },
-//   {
-//     name: "Mephir",
-//     elements: ['Feu'],
-//     clan: "Misfits"
-//   },
-// ]
 
 const elemntor = ( lmt )=> {
   switch(lmt) {
@@ -111,7 +37,7 @@ const Page = () => {
   Get.Character()
   .then(x => characters.length || setCharacters(x) )
 
-  return <div className='Dortoire' onClick={closeNav}>
+  return <div className='Dortoire'>
     <div className="charDisplay">
       {
         characters.map(perso => {

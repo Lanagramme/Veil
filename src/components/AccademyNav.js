@@ -3,15 +3,17 @@ import Link from "./Link.js"
 
 const accademy = [
   {
-    text: "Training"
+    text: "Training",
+    url: "/Board"
   },
   {
-    text: "Team Clash"
+    text: "Team Clash",
   },
 ]
 const AccademyNav = () => <div className="AccademyNav">
   {
     accademy.map( lien => <Link
+      url={lien.url}
       text={lien.text} 
       css='lien_accademy_nav'
     />)

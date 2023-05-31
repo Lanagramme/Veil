@@ -6,6 +6,7 @@ import Home from './pages/Home.js'
 import Accademy from './pages/Accademy.js'
 import Covens from './pages/Covens.js'
 import Grimmoire from './pages/Grimmoire.js'
+import Board from './pages/Board.js'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
                 <Route exact path='/'  element={<Home   />} />
                 <Route path='/Accademy'  element={<Accademy  />} />
                 <Route path='/Dortoire'  element={<Dortoire  />} />
+                <Route path='/Board'  element={<Board  />} />
                 <Route path='/Covens'    element={<Covens    />} />
                 <Route path='/Grimmoire' element={<Grimmoire />} />
             </Routes>
