@@ -1,9 +1,10 @@
 :root {
-  --dimension: 90px;
+  --dimension_case: 90px;
+  --dimension_pion: 70px;
 }
 
 .Board,.GameBoard,.Case {
-  border: 1px solid white;
+  /* border: 1px solid white; */
 }
 
 .GameBoard {
@@ -22,6 +23,15 @@
   width: fit-content;
   transform: rotateX(17deg) ;
   transform-style: preserve-3d;
+background-image: repeating-conic-gradient(from 45deg, #111 0deg 90deg, #222 90deg 180deg);
+background-size:  var(--dimension_case) var(--dimension_case) ;
+  	/* overflow: hidden; */
+    /* background: #ffd630; */
+    border-radius: 20px;
+    border: 5px solid gray;
+    box-shadow: 0 70px 40px -20px rgba(0, 0, 0, 0.2);
+    width: max-content;
+    /* margin: 20px auto; */
 }
 
 .Ligne {
@@ -29,6 +39,59 @@
 }
 
 .Case {
- height: var(--dimension);
- width: var(--dimension);
+ height: var(--dimension_case);
+ width: var(--dimension_case);
+ display: grid;
+  place-items: center;
+}
+
+.Ligne:not(:last-child) {
+	border-bottom: 1px solid orange;
+}
+.Case:not(:last-child) {
+	border-right: 1px solid orange;
+}
+
+ .Case:hover{
+  background: #ff45009e;
+}
+.Case.active{
+  background: orangered;
+}
+
+.pion {
+ height: var(--dimension_pion);
+ width: var(--dimension_pion);
+ /* background: Red; */
+  background: #ff000050;
+  border-radius: 50%;
+  position: relative;
+
+}
+
+.pion:before {
+  width: var(--dimension_case);
+  height: 250%;
+  content: "";
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -10px;
+  bottom: 50%;
+}
+
+
+.pion.Manequin1:before{
+  background-image: url('../../public/Manequin1.png');
+}
+.pion.Manequin2:before{
+  background-image: url('../../public/Manequin2.png');
+}
+.pion.Manequin3:before{
+  background-image: url('../../public/Manequin3.png');
+}
+
+.movement {
+  background: green;
 }

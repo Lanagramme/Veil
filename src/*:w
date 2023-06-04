@@ -1,0 +1,55 @@
+:root {
+  --dimension_case: 90px;
+  --dimension_pion: 70px;
+}
+
+.Board,.GameBoard,.Case {
+  border: 1px solid white;
+}
+
+.GameBoard {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  padding-top: 90px;
+}
+
+.boardPerspective {
+  perspective: 785px;
+}
+
+.Plateau {
+  margin: auto;
+  width: fit-content;
+  transform: rotateX(17deg) ;
+  transform-style: preserve-3d;
+}
+
+.Ligne {
+  display: flex;
+}
+
+.Case {
+ height: var(--dimension_case);
+ width: var(--dimension_case);
+ display: grid;
+  place-items: center;
+}
+
+.pion {
+ height: var(--dimension_pion);
+ width: var(--dimension_pion);
+ background: hotpink;
+  border-radius: 50%;
+  position: relative;
+
+}
+
+.pion:before {
+  width:100%;
+  content: "";
+  background: url('../../public/Manequin1.png') no-repeat center center/cover;
+  position: absolute;
+
+
+}

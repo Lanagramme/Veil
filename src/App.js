@@ -7,6 +7,8 @@ import Accademy from './pages/Accademy.js'
 import Covens from './pages/Covens.js'
 import Grimmoire from './pages/Grimmoire.js'
 import Board from './pages/Board.js'
+// import TeamSelect from './pages/TeamSelect.js'
+// import TeamCreate from './pages/TeamCreate.js'
 
 function App() {
   return (
